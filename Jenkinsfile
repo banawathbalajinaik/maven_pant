@@ -5,15 +5,15 @@ pipeline {
             steps {
                 sh'''
                 pwd
-                rm -rf simple-java-maven-app
-                git clone "https://github.com/banawathbalajinaik/simple-java-maven-app.git"
+                rm -rf shell_praticles
+                git clone "https://github.com/banawathbalajinaik/shell_praticles.git"
                 '''
             }
         }
         stage('clean') { 
             steps {
                 sh'''
-                cd simple-java-maven-app
+                cd shell_praticles
                 mvn clean
                 '''
             }
@@ -21,7 +21,7 @@ pipeline {
         stage('compile') { 
             steps {
                 sh'''
-                cd simple-java-maven-app
+                cd shell_praticles
                 mvn compile
                 '''
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('test') { 
             steps {
                 sh'''
-                cd simple-java-maven-app
+                cd shell_praticles
                 mvn test
                 '''
             }
